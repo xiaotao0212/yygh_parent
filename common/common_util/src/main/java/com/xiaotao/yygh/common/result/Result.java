@@ -73,6 +73,10 @@ public class Result<T> {
         return build(data, ResultCodeEnum.FAIL);
     }
 
+    public static<T> Result<T> bool(boolean flag){
+        return flag ? Result.ok() : Result.fail();
+    }
+
     public Result<T> message(String msg){
         this.setMessage(msg);
         return this;
